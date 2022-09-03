@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-align: center;">
+  <div class="container-fluid">
+    <a class="nav-link " routerLink="city" routerLinkActive="active" style="margin-left: 100px;">Şehirler</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="value" routerLinkActive="active" style="margin-left: 200px;">Values
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cityAdd" routerLinkActive="active" style="margin-left: 300px;">Şehir Ekle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="register" routerLinkActive="active" style="margin-left: 300px;">Kayıt Ol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="margin-left: 300px;">About</a>
+        </li>
+      </ul>
+      <form *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
+          <label for="">Kullanıcı Adı</label>
+          <input type="text" class="form-control" name="userName" id="userName" placeholder="" [(ngModel)]="loginUser.userName" required>
+          <label for="">Şifre</label>
+          <input type="password" class="form-control" name="password" id="password"  placeholder="" [(ngModel)]="loginUser.password" required>
+          <hr>
+          <button type="submit" class="btn btn-outline-info" style="width: 300px;">Giriş</button>
+      </form>
+      <button type="submit" class="btn btn-outline-info" style="width: 300px;" *ngIf="isAuthenticated" (click)="logOut()">Çıkış</button>
+    </div>
+  </div>
+</nav>

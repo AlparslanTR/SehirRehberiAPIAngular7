@@ -1,0 +1,49 @@
+<body>
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Türkiye Şehirler Haritası</h1>
+          <p class="lead text-muted">Bu Sayfamızda Türkiye'nin 81 İlini Resimli Ve Detaylı Bir Anlatım Şeklinde Hem Tanıyacak Ve Göreceksiniz.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5">
+      <div class="container">
+
+        <div class="row" >
+          <div class="col-md-4" *ngFor="let x of cities" style="padding: 20px;">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h2>{{x.name}}</h2>
+                <p class="card-text">{{x.description}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-success" routerLink="/cityDetails/{{x.id}}">Detaylar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" href="www.google.com">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Başa Dön</a>
+      </p>
+    </div>
+  </footer>
+
+
+      <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+    </body>
